@@ -3,19 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTLauncher — Кастомные Темы</title>
-    <!-- Локальное подключение фреймворка напрямую из папки -->
+    <title>MTLauncher — Конструктор Тем</title>
     <link rel="stylesheet" href="css/pico.min.css">
     <style>
-        :root{--pico-font-family-emoji:apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol;--pico-font-family-monospace:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;--pico-font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,var(--pico-font-family-emoji);--pico-line-height:1.5;--pico-font-weight:400;--pico-font-size:100%}@media (min-width:576px){:root{--pico-font-size:106.25%}}@media (min-width:768px){:root{--pico-font-size:112.5%}}@media (min-width:1024px){:root{--pico-font-size:118.75%}}@media (min-width:1440px){:root{--pico-font-size:125%}}html{box-sizing:border-box;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%;background-color:#131722;color:#c8cbd0;font-family:var(--pico-font-family);line-height:var(--pico-line-height);font-size:var(--pico-font-size);font-weight:var(--pico-font-weight)}*,::after,::before{box-sizing:inherit}body{width:100%;margin:0;background-color:#131722}.container{width:100%;margin-right:auto;margin-left:auto;padding-right:1rem;padding-left:1rem}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:1024px){.container{max-width:960px}}@media (min-width:1440px){.container{max-width:1200px}}header,main,footer{display:block}a{color:#4ade80;text-decoration:none;transition:background-color .15s,color .15s,border-color .15s,box-shadow .15s}a:hover{color:#3bc771}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;color:#fff;font-weight:700}h1{font-size:2.5rem}p{margin-top:0;margin-bottom:1rem}nav{display:flex;justify-content:space-between;align-items:center}nav ul{display:flex;list-style:none;margin:0;padding:0;align-items:center}nav ul li{padding:calc(1rem * .5) 0;margin-left:1rem}nav ul:first-child li{margin-left:0;margin-right:1rem}article{padding:1.5rem;margin-bottom:1.5rem;background-color:#1c2130;border-radius:8px;border:1px solid #2d3548}.grid{display:grid;grid-template-columns:1fr;gap:1.5rem}@media (min-width:768px){.grid{grid-template-columns:repeat(3,1fr)}}.button,button{display:inline-block;padding:.75rem 1.5rem;font-size:1rem;font-weight:700;line-height:1.5;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;user-select:none;background-color:#4ade80;border:1px solid #4ade80;color:#0f172a;border-radius:8px;transition:all .15s ease-in-out}.button:hover,button:hover{background-color:#3bc771;border-color:#3bc771;color:#0f172a}
         :root { --pico-primary: #4ade80; --pico-primary-hover: #3bc771; }
         body { display: flex; flex-direction: column; min-height: 100vh; justify-content: space-between; margin: 0; }
         header, footer { background: #1a1a1a; border-color: #2a2a2a; }
-        .soon-container { text-align: center; padding: 5rem 0; }
-        .soon-title { font-size: 4rem; font-weight: 900; text-transform: uppercase; tracking-widest: 4px; margin: 0; color: #fff; }
         footer .container { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #707070; }
         footer a { color: #707070; margin-left: 15px; }
         footer a:hover { color: #fff; }
+
+        .preview-window {
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        .preview-btn {
+            font-weight: bold;
+            transition: all 0.2s;
+            cursor: pointer;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .preview-input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        pre {
+            background: #0f111a;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #23283d;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -27,23 +54,66 @@
             </ul>
             <ul>
                 <li><a href="index.html" class="secondary">Главная</a></li>
-                <li><a href="themes.html" style="color: #4ade80; border-bottom: 2px solid #4ade80;">Кастомные темы</a></li>
+                <li><a href="themes.html" style="color: #4ade80; border-bottom: 2px solid #4ade80;">Создать тему</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="container">
-        <section class="soon-container">
-            <h1 class="soon-title">Скоро</h1>
-            <p style="color: #707070; max-width: 450px; margin: 1rem auto 0 auto;">
-                Мы уже разрабатываем встроенный редактор. Вы сможете полностью пересобрать интерфейс лаунчера под свой вкус.
-            </p>
-        </section>
+        <h2 style="text-align: center; margin-bottom: 2rem;">Онлайн редактор</h2>
+        
+        <div class="grid">
+            <unknown>
+                <h4 style="color: #4ade80;">Настройки цветов</h4>
+                
+                <label>Фон окна (QWidget):
+                    <input type="color" id="bgColor" value="#000000">
+                </label>
+                
+                <label>Цвет текста:
+                    <input type="color" id="textColor" value="#ffffff">
+                </label>
+                
+                <label>Фон кнопки (QPushButton):
+                    <input type="color" id="btnBgColor" value="#800080">
+                </label>
+                
+                <label>Рамка кнопки:
+                    <input type="color" id="btnBorderColor" value="#ff0000">
+                </label>
+
+                <label>Рамка при наведении (Hover):
+                    <input type="color" id="btnHoverBorderColor" value="#008000">
+                </label>
+                
+                <label>Рамка поля ввода (QLineEdit):
+                    <input type="color" id="inputBorderColor" value="#0000ff">
+                </label>
+                
+                <label>Текст в поле ввода:
+                    <input type="color" id="inputTextColor" value="#ff0000">
+                </label>
+
+                <button onclick="downloadQSS()" class="fluid" style="margin-top: 1rem;">💾 Скачать .qss файл</button>
+            </unknown>
+
+            <unknown>
+                <h4 style="text-align: center;">Предпросмотр</h4>
+                <div id="qtWindow" class="preview-window">
+                    <p id="qtText">Пример текста интерфейса</p>
+                    <button id="qtButton" class="preview-btn">Войти в игру</button>
+                    <input id="qtInput" type="text" class="preview-input" value="Ваш Никнейм" readonly>
+                </div>
+
+                <h4 style="margin-top: 2rem; text-align: center;">Результирующий QSS-код</h4>
+                <pre><code id="qssCode"></code></pre>
+            </unknown>
+        </div>
     </main>
 
     <footer>
         <div class="container">
-            <div>© 2026 MTLauncher. Все права защищены.</div>
+            <div>© 2026 MineLauncher. Все права защищены.</div>
             <div>
                 <a href="https://github.com/MTWave/MTLauncher" target="_blank">GitHub</a>
                 <a href="https://codeberg.org/TechnoWave/TechnoLauncher" target="_blank">Codeberg</a>
@@ -51,5 +121,80 @@
         </div>
     </footer>
 
+    <script>
+        const inputs = ['bgColor', 'textColor', 'btnBgColor', 'btnBorderColor', 'btnHoverBorderColor', 'inputBorderColor', 'inputTextColor'];
+        
+        const qtWindow = document.getElementById('qtWindow');
+        const qtText = document.getElementById('qtText');
+        const qtButton = document.getElementById('qtButton');
+        const qtInput = document.getElementById('qtInput');
+        const qssCodeBlock = document.getElementById('qssCode');
+
+        function updateTheme() {
+            const bg = document.getElementById('bgColor').value;
+            const text = document.getElementById('textColor').value;
+            const btnBg = document.getElementById('btnBgColor').value;
+            const btnBorder = document.getElementById('btnBorderColor').value;
+            const btnHover = document.getElementById('btnHoverBorderColor').value;
+            const inputBorder = document.getElementById('inputBorderColor').value;
+            const inputText = document.getElementById('inputTextColor').value;
+
+            qtWindow.style.backgroundColor = bg;
+            qtText.style.color = text;
+            
+            qtButton.style.backgroundColor = btnBg;
+            qtButton.style.color = text;
+            qtButton.style.border = `3px solid ${btnBorder}`;
+            qtButton.style.borderRadius = '7px';
+            qtButton.style.padding = '4px 8px';
+
+            qtButton.onmouseenter = () => qtButton.style.borderColor = btnHover;
+            qtButton.onmouseleave = () => qtButton.style.borderColor = btnBorder;
+
+            qtInput.style.backgroundColor = bg;
+            qtInput.style.border = `3px solid ${inputBorder}`;
+            qtInput.style.borderRadius = '7px';
+            qtInput.style.color = inputText;
+
+            const qssTemplate = `QWidget {
+    background-color: ${bg};
+    color: ${text};
+}
+QPushButton {
+    background-color: ${btnBg};
+    color: ${text};
+    border: 3px solid ${btnBorder};
+    border-radius: 7px;
+    padding: 4px 8px;
+}
+QLineEdit {
+    border: 3px solid ${inputBorder};
+    border-radius: 7px;
+    color: ${inputText};
+}
+
+QPushButton:hover {
+    border: 3px solid ${btnHover};
+}`;
+
+            qssCodeBlock.textContent = qssTemplate;
+        }
+
+        function downloadQSS() {
+            const code = qssCodeBlock.textContent;
+            const blob = new Blob([code], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'customtheme.qss';
+            link.click();
+            URL.revokeObjectURL(link.href);
+        }
+
+        inputs.forEach(id => {
+            document.getElementById(id).addEventListener('input', updateTheme);
+        });
+
+        updateTheme();
+    </script>
 </body>
 </html>
