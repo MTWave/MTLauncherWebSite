@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTLauncher — Кастомные Темы</title>
+    <!-- Локальное подключение фреймворка напрямую из папки -->
+    <link rel="stylesheet" href="css/pico.min.css">
+    <style>
+        :root{--pico-font-family-emoji:apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol;--pico-font-family-monospace:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;--pico-font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,var(--pico-font-family-emoji);--pico-line-height:1.5;--pico-font-weight:400;--pico-font-size:100%}@media (min-width:576px){:root{--pico-font-size:106.25%}}@media (min-width:768px){:root{--pico-font-size:112.5%}}@media (min-width:1024px){:root{--pico-font-size:118.75%}}@media (min-width:1440px){:root{--pico-font-size:125%}}html{box-sizing:border-box;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%;background-color:#131722;color:#c8cbd0;font-family:var(--pico-font-family);line-height:var(--pico-line-height);font-size:var(--pico-font-size);font-weight:var(--pico-font-weight)}*,::after,::before{box-sizing:inherit}body{width:100%;margin:0;background-color:#131722}.container{width:100%;margin-right:auto;margin-left:auto;padding-right:1rem;padding-left:1rem}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:1024px){.container{max-width:960px}}@media (min-width:1440px){.container{max-width:1200px}}header,main,footer{display:block}a{color:#4ade80;text-decoration:none;transition:background-color .15s,color .15s,border-color .15s,box-shadow .15s}a:hover{color:#3bc771}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;color:#fff;font-weight:700}h1{font-size:2.5rem}p{margin-top:0;margin-bottom:1rem}nav{display:flex;justify-content:space-between;align-items:center}nav ul{display:flex;list-style:none;margin:0;padding:0;align-items:center}nav ul li{padding:calc(1rem * .5) 0;margin-left:1rem}nav ul:first-child li{margin-left:0;margin-right:1rem}article{padding:1.5rem;margin-bottom:1.5rem;background-color:#1c2130;border-radius:8px;border:1px solid #2d3548}.grid{display:grid;grid-template-columns:1fr;gap:1.5rem}@media (min-width:768px){.grid{grid-template-columns:repeat(3,1fr)}}.button,button{display:inline-block;padding:.75rem 1.5rem;font-size:1rem;font-weight:700;line-height:1.5;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;user-select:none;background-color:#4ade80;border:1px solid #4ade80;color:#0f172a;border-radius:8px;transition:all .15s ease-in-out}.button:hover,button:hover{background-color:#3bc771;border-color:#3bc771;color:#0f172a}
+        :root { --pico-primary: #4ade80; --pico-primary-hover: #3bc771; }
+        body { display: flex; flex-direction: column; min-height: 100vh; justify-content: space-between; margin: 0; }
+        header, footer { background: #1a1a1a; border-color: #2a2a2a; }
+        .soon-container { text-align: center; padding: 5rem 0; }
+        .soon-title { font-size: 4rem; font-weight: 900; text-transform: uppercase; tracking-widest: 4px; margin: 0; color: #fff; }
+        footer .container { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #707070; }
+        footer a { color: #707070; margin-left: 15px; }
+        footer a:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <ul>
+                <li><strong style="color: #4ade80;">MTLAUNCHER</strong></li>
+            </ul>
+            <ul>
+                <li><a href="index.html" class="secondary">Главная</a></li>
+                <li><a href="themes.html" style="color: #4ade80; border-bottom: 2px solid #4ade80;">Кастомные темы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="soon-container">
+            <h1 class="soon-title">Скоро</h1>
+            <p style="color: #707070; max-width: 450px; margin: 1rem auto 0 auto;">
+                Мы уже разрабатываем встроенный редактор. Вы сможете полностью пересобрать интерфейс лаунчера под свой вкус.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>© 2026 MTLauncher. Все права защищены.</div>
+            <div>
+                <a href="https://github.com/MTWave/MTLauncher" target="_blank">GitHub</a>
+                <a href="https://codeberg.org/TechnoWave/TechnoLauncher" target="_blank">Codeberg</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

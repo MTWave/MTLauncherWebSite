@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTLauncher — Главная</title>
+    <link rel="stylesheet" href="css/pico.min.css">
+    <style>
+        :root{--pico-font-family-emoji:apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol;--pico-font-family-monospace:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;--pico-font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,var(--pico-font-family-emoji);--pico-line-height:1.5;--pico-font-weight:400;--pico-font-size:100%}@media (min-width:576px){:root{--pico-font-size:106.25%}}@media (min-width:768px){:root{--pico-font-size:112.5%}}@media (min-width:1024px){:root{--pico-font-size:118.75%}}@media (min-width:1440px){:root{--pico-font-size:125%}}html{box-sizing:border-box;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%;background-color:#131722;color:#c8cbd0;font-family:var(--pico-font-family);line-height:var(--pico-line-height);font-size:var(--pico-font-size);font-weight:var(--pico-font-weight)}*,::after,::before{box-sizing:inherit}body{width:100%;margin:0;background-color:#131722}.container{width:100%;margin-right:auto;margin-left:auto;padding-right:1rem;padding-left:1rem}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:1024px){.container{max-width:960px}}@media (min-width:1440px){.container{max-width:1200px}}header,main,footer{display:block}a{color:#4ade80;text-decoration:none;transition:background-color .15s,color .15s,border-color .15s,box-shadow .15s}a:hover{color:#3bc771}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;color:#fff;font-weight:700}h1{font-size:2.5rem}p{margin-top:0;margin-bottom:1rem}nav{display:flex;justify-content:space-between;align-items:center}nav ul{display:flex;list-style:none;margin:0;padding:0;align-items:center}nav ul li{padding:calc(1rem * .5) 0;margin-left:1rem}nav ul:first-child li{margin-left:0;margin-right:1rem}article{padding:1.5rem;margin-bottom:1.5rem;background-color:#1c2130;border-radius:8px;border:1px solid #2d3548}.grid{display:grid;grid-template-columns:1fr;gap:1.5rem}@media (min-width:768px){.grid{grid-template-columns:repeat(3,1fr)}}.button,button{display:inline-block;padding:.75rem 1.5rem;font-size:1rem;font-weight:700;line-height:1.5;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;user-select:none;background-color:#4ade80;border:1px solid #4ade80;color:#0f172a;border-radius:8px;transition:all .15s ease-in-out}.button:hover,button:hover{background-color:#3bc771;border-color:#3bc771;color:#0f172a}
+
+        body { background-color: #121212; color: #e0e0e0; }
+        .navbar { background-color: #1a1a1a !important; border-b: 1px solid #2a2a2a; }
+        .nav-link { color: #a0a0a0 !important; }
+        .nav-link.active { color: #4ade80 !important; border-bottom: 2px solid #4ade80; }
+        .nav-link:hover { color: #ffffff !important; }
+        .btn-download { background-color: #4ade80; color: #0f172a; font-weight: bold; border: none; padding: 12px 30px; border-radius: 8px; transition: all 0.2s; }
+        .btn-download:hover { background-color: #3bc771; transform: translateY(-2px); color: #0f172a; }
+        .feature-card { background-color: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 24px; height: 100%; }
+        .feature-title { color: #4ade80; font-weight: bold; }
+        footer { background-color: #161616; border-top: 1px solid #2a2a2a; color: #6c757d; }
+        footer a { color: #6c757d; text-decoration: none; }
+        footer a:hover { color: #ffffff; }
+        .badge-win { background-color: #1f2d24; color: #4ade80; border: 1px solid #2a4d36; }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-screen justify-content-between">
+
+    <nav class="navbar navbar-expand navbar-dark sticky-top py-3">
+        <div class="container max-width-lg d-flex flex-column flex-sm-row justify-content-between align-items-center">
+            <a class="navbar-brand fw-bold text-uppercase tracking-wider text-success" style="color: #4ade80 !important;" href="index.html">MTLauncher</a>
+            <div class="navbar-nav gap-3 mt-2 mt-sm-0">
+                <a class="nav-link active" href="index.html">Главная</a>
+                <a class="nav-link" href="themes.html">Кастомные темы</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-auto py-5 text-center" style="max-width: 900px;">
+        <div class="mb-4">
+            <span class="badge badge-win px-3 py-2 rounded-pill text-uppercase">Доступно для Windows</span>
+        </div>
+        
+        <h1 class="display-4 fw-black text-white mb-3">
+            Простой лаунчер <br><span style="color: #4ade80;">для Майнкрафт</span>
+        </h1>
+        
+        <p class="lead text-secondary mx-auto mb-5" style="max-width: 650px;">
+            Простой и быстрыйй лаунчер для запуска игры Minecraft, написанный на Python.
+        </p>
+
+        <div class="mb-5">
+            <a href="launcher-setup.exe" download class="btn btn-download btn-lg d-inline-flex align-items-center gap-2 shadow-sm">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M0 2.827L7.962 1.73V9.58H0V2.827zm0 7.734h7.962v7.868L0 17.34v-6.779zM8.948 1.594L20 0v9.58H8.948V1.594zM20 10.561v9.439l-11.052-1.55v-7.889H20z"/></svg>
+                Скачать для Windows
+            </a>
+            <div class="small text-muted mt-2">Версия Beta 4 • .EXE для Windows 10/11</div>
+        </div>
+
+        <div class="row g-4 text-start mt-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-title h5 mb-2">Высокая скорость</div>
+                    <p class="small text-secondary mb-0">Оптимизированный код обеспечивает моментальный запуск игры без лишних задержек.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-title h5 mb-2">Поддержка модов</div>
+                    <p class="small text-secondary mb-0">Устанавливайте версии с поддержкой Fabric и Quilt.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-title h5 mb-2">Кастомизация</div>
+                    <p class="small text-secondary mb-0">Меняйте внешний вид лаунчера под своё настроение. Скоро появится полноценный магазин тем.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="py-4">
+        <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 small">
+            <div>© 2026 MTLauncher. Все права защищены.</div>
+            <div class="d-flex gap-3">
+                <a href="https://github.com/MTWave/MTLauncher" target="_blank">GitHub</a>
+                <a href="https://codeberg.org/TechnoWave/TechnoLauncher" target="_blank">Codeberg</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
